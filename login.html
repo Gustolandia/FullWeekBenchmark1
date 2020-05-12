@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://lipis.github.io/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        a{
+           color: lightgreen;
+       }
+       a:hover{
+           color: lightgreen;
+       }
+        .content{
+            width: 40%;
+            margin: 0 auto;
+        }
+       h5 {
+           text-align: center; 
+           border-bottom: 1px solid #d9dadc; 
+           line-height: 0.1em;
+           margin: 10px 0 20px; 
+        } 
+
+        h5 span { 
+            background:#fff; 
+            padding:0 10px; 
+        }
+        button{
+            width: 100%;
+            text-transform: uppercase;
+        }
+        button i{
+            margin-right: 1em;
+        }
+        .form-group:first-child{
+            display:block;
+            position: relative
+        }
+        .form-group:first-child:after {
+            font-family: 'FontAwesome';
+            content: '\f023';
+            position: absolute;
+            right: 6px;
+            bottom: 10px;
+        }
+
+        .form-check {
+            display: block;
+            position: relative;
+            padding-left: 2rem;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .form-check input[type='checkbox'] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            border-radius: 5px;
+            background-color: #eee;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .form-check:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+
+        /* When the checkbox is checked, add a blue background */
+        .form-check input:checked ~ .checkmark {
+            background-color: green;
+        }
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+        .form-check input:checked ~ .checkmark:after {
+            display: block;
+        }
+                
+        /* Style the checkmark/indicator */
+        .form-check .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        @media (max-width: 768px) {
+            .content{
+            width: 80%;
+            margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .content{
+            width: 100%;
+            margin: 0 auto;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid py-3">
+        <div class="row d-flex flex-column text-center">
+            <div class="logo"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Black-Logo.wine.svg" alt="logo"  style="width:200px;height:80px">
+            </div>
+            <div>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                   <p>To continue, log in to Spotify.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <button type="button" class="btn btn-primary btn-lg badge-pill mb-2"> <i class="fa fa-facebook"></i>Continue with facebook</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <button type="button" class="btn btn-dark btn-lg badge-pill"> <i class="fa fa-apple"></i>Continue with apple</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <div>
+                        <h5><span class="text-muted">OR</span></h5>
+                    </div>
+                </div>
+            </div>
+            <form>
+                <div class="form-group">
+                  <input type="email" class="form-control email-control" id="email" aria-describedby="emailHelp" placeholder="Email address or username"
+                  required="required">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="pass" placeholder="Password" required="required">
+                </div>
+                <div class="d-flex">
+                    <label class="form-check text-muted check-label col-sm-6">Remember me
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+                    <button type="submit" class="btn btn-success badge-pill col-sm-6">Log in</button>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <div>
+                        <a href="#">Forgot your password?</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <p class="font-weight-bold">Don't have an account?</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <button type="submit" class="btn btn-outline-secondary btn-lg badge-pill">Sign up for spotify</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <small class="form-text text-muted">If you click "Login to Facebook" and are not a Spotify user,
+                        and you agree to Spotify's <a href="#">Terms & conditions</a> and <a href="#">Privacy Policy</a>
+                    </small>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>
