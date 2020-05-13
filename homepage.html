@@ -134,6 +134,39 @@
             font-size:small !important;
             margin-top: 5px;
         }
+        p:hover {
+          font-size: medium !important;
+        }
+
+        .hovereffect {
+          width:100%;
+          height:100%;
+          float:left;
+          overflow:visible;
+          position:relative;
+          cursor:pointer;
+         
+         
+          }
+
+          .hovereffect img {
+          display:block;
+          position:relative;
+          -webkit-transition:all .3s linear;
+          transition:all .3s linear;
+          }
+
+          .hovereffect:hover img {
+          -ms-transform:scale(1.1);
+          -webkit-transform:scale(1.1);
+          transform:scale(1.1);
+          }
+
+        .top-li:hover {
+          color: white !important;
+          text-decoration: underline;
+
+        }
 
         .signup {
           background-color: white;
@@ -266,9 +299,7 @@
         .volumeControl:hover i, .volumeControl:hover div{
             opacity: 1;
             color:white;
-        }
-
-       
+        }       
     </style>
   </head>
 
@@ -287,6 +318,7 @@
                   <a class="nav-link" href="#">
                     <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M349.714 347.937l93.714 109.969-16.254 13.969-93.969-109.969q-48.508 36.825-109.207 36.825-36.826 0-70.476-14.349t-57.905-38.603-38.603-57.905-14.349-70.476 14.349-70.476 38.603-57.905 57.905-38.603 70.476-14.349 70.476 14.349 57.905 38.603 38.603 57.905 14.349 70.476q0 37.841-14.73 71.619t-40.889 58.921zM224 377.397q43.428 0 80.254-21.461t58.286-58.286 21.461-80.254-21.461-80.254-58.286-58.285-80.254-21.46-80.254 21.46-58.285 58.285-21.46 80.254 21.46 80.254 58.285 58.286 80.254 21.461z" fill="currentColor" fill-rule="evenodd"></path></svg>
                     Search
+                  </a>
                     <a class="nav-link" href="#">
                         <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z" fill="currentColor"></path></svg>
                         Your library
@@ -359,23 +391,23 @@
           
             <div class="row">
               <div class="col-sm-12 col-md-4 col-lg-2 card-deck">
-                <div class="card mx-1 img-row ">
-                  <img src="https://i.scdn.co/image/ab67706f00000002dafe7903bdd85921f50f1a48" class="card-img-top" alt="...">
+                <div class="hovereffect card mx-1 img-row ">
+                  <img src="https://i.scdn.co/image/ab67706f00000002dafe7903bdd85921f50f1a48" class="card-img-top img-responsive" alt="...">
                  <p>Italian Karaoke</p>
                 </div>
               
             
               </div>
               <div class="col-sm-12 col-md-4 col-lg-2 card-deck">
-                <div class="card mx-1 img-row">
+                <div class="hovereffect card mx-1 img-row">
                   <img src="https://pbs.twimg.com/media/DypjQ50XcAEmrZZ.jpg" class="card-img-top" alt="...">
-                 <p>Italy's Frequent Rotation</p>
+                 <p>Italian Rotation</p>
                 </div>
               
             
               </div>
               <div class="col-sm-12 col-md-4 col-lg-2 card-deck">
-                <div class="card mx-1 img-row">
+                <div class="hovereffect card mx-1 img-row">
                   <img src="https://i.scdn.co/image/ab67706f00000002cdd6035c9116161978798751" class="card-img-top" alt="...">
                  <p>Liricist</p>
                 </div>
@@ -383,7 +415,7 @@
             
               </div>
               <div class="col-sm-12 col-md-4 col-lg-2 card-deck">
-                <div class="card mx-1 img-row">
+                <div class="hovereffect card mx-1 img-row">
                   <img src="https://pl.scdn.co/images/pl/default/67ff6716a77df310f9a7ae382e0ae50e0f5bf57e" class="card-img-top" alt="...">
                  <p>00's Italy</p>
                 </div>
@@ -391,7 +423,7 @@
             
               </div>
               <div class="col-sm-12 col-md-4 col-lg-2 card-deck">
-                <div class="card mx-1 img-row">
+                <div class="hovereffect card mx-1 img-row">
                   <img src="https://i.scdn.co/image/ab67706f000000021907f15a148948007f05dde9" class="card-img-top" alt="...">
                  <p>Cocktail Hour</p>
                 </div>
@@ -399,7 +431,7 @@
             
               </div>
               <div class="col-sm-12 col-md-4 col-lg-2 card-deck">
-                <div class="card mx-1 img-row">
+                <div class="hovereffect card mx-1 img-row">
                   <img src="https://i.scdn.co/image/ab67706f000000025bfa4d6bec505c7a2634cc69" class="card-img-top" alt="...">
                  <p>Hip Hop</p>
                 </div>
@@ -414,7 +446,7 @@
               </div>
             <div class="row">
               <div class="col-sm-12 col-md-4 col-lg-2 card-deck">
-                <div class="card mx-1 img-row">
+                <div class="hovereffect card mx-1 img-row">
                   <img src="https://charts-images.scdn.co/REGIONAL_IT_DEFAULT.jpg" class="card-img-top" alt="...">
                  <p>Top 50 Italy</p>
                 </div>
@@ -422,7 +454,7 @@
             
               </div>
               <div class="col-sm-12 col-md-4 col-lg-2 card-deck">
-                <div class="card mx-1 img-row">
+                <div class="hovereffect card mx-1 img-row">
                   <img src="https://vivelespatess.github.io/image/top50.jpg" class="card-img-top" alt="...">
                  <p>Top 50 Global</p>
                 </div>
@@ -430,7 +462,7 @@
             
               </div>
               <div class="col-sm-12 col-md-4 col-lg-2 card-deck">
-                <div class="card mx-1 img-row">
+                <div class="hovereffect card mx-1 img-row">
                   <img src="https://charts-images.scdn.co/VIRAL_GLOBAL_DEFAULT.jpg" class="card-img-top" alt="...">
                  <p>Viral 50 Global</p>
                 </div>
@@ -438,7 +470,7 @@
             
               </div>
               <div class="col-sm-12 col-md-4 col-lg-2 card-deck">
-                <div class="card mx-1 img-row">
+                <div class="hovereffect card mx-1 img-row">
                   <img src="https://i.scdn.co/image/ab67706c0000da8490eea0cbfd0a16dd9327116c" class="card-img-top" alt="...">
                  <p>Viral 50 Italy</p>
                 </div>
