@@ -13,10 +13,7 @@
           border-radius: 25px 25px 25px 25px;
 
         }
-        [class*="albumList"]{
 
-            margin-bottom: 10rem;
-        }
         #collapsedButton{
             width:3.4rem;
             }
@@ -379,12 +376,13 @@
         }
         [class*="albumList"]{
             color:white;
-            margin-bottom: 10rem;
+            padding-bottom: 10rem;
+            height:100%;
         }
         @media only screen and (min-width: 993px){
             .albumList{
             color:white;
-            margin-bottom: 5rem;
+            padding-bottom: 5rem;
             }
             .bottomNav{
                 margin-top: 5rem;
@@ -638,7 +636,7 @@
 
     <footer class="fixed-bottom">
         <div class="row">
-            <div class="detailFav col-6 col-lg-3 order-1 d-flex align-items-center">
+            <div style="height:5rem" class="detailFav col-6 col-lg-3 order-1 d-flex align-items-center">
                 <img id="imageFooter" src="https://img.discogs.com/QT8ppBlDmb7jh1Q4y8etne8g2BQ=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7084048-1530792189-1455.jpeg.jpg" alt="Queen">
                 <span class="mb-0 mx-auto" id="nameOfSong">Love Of My Life<br><span>Queen</span></span>
                 <a href="#" id="emptyHeart"><i class="fa fa-heart-o pl-4"></i></a>
