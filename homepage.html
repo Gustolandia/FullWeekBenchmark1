@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
 
@@ -28,6 +29,20 @@
           padding-top: 20px;
         }
 
+        .side1 {
+          background-color: black !important;
+          padding: none !important;
+        }
+
+        .navbar-toggler {
+          background-color: black;
+          padding: 0px;
+          ;
+        }
+        #sideBlack {
+          background-color: black !important;
+        }
+
 
 
 
@@ -39,7 +54,8 @@
 
         @media screen and (max-height: 450px) {
           .sidenav {padding-top: 15px;}
-          .sidenav a {font-size: 18px;}
+          .sidenav a {font-size: 10px;}
+
         }
 
         .nav-link {
@@ -297,7 +313,17 @@
         .volumeControl:hover i, .volumeControl:hover div{
             opacity: 1;
             color:white;
-        }       
+        }   
+
+        #mainNavbutton {
+          background-color:darkcyan;
+        }
+
+        .bottomSide{
+          position:absolute;
+          top: 150%;
+
+        }
         
     </style>
   </head>
@@ -305,7 +331,14 @@
   <body>
     <div class="container-fluid">
         <div class="sidenav">
-            <div class="side1">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="sideBlack">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="side1">
                 <a class="nav-link brand active" href="#">
                     <img src="https://www.iconsdb.com/icons/preview/white/spotify-xxl.png" width="40px" height="40">
                     Spotify <span class="sr-only">(current)</span>
@@ -322,42 +355,38 @@
                         <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z" fill="currentColor"></path></svg>
                         Your library
                       </a>
-            </div>
+                      <ul class="nav flex-column mb-sm-7 bottomSide">
+                        <li class="nav-items">           
+                            <a class="nav-link" href="#">                        
+                              <button type="button" class="btn btn-outline-secondary signup">Signup</button>           
+                              <button type="button" class="btn btn-dark login">Login</button>
+                            </a>
+                          </li>
+                          <div class="nav-link1 mb-sm-1">
 
-            <div class="side2">
-                <ul class="nav flex-column mb-12">
-                  <li class="nav-items">           
-                      <a class="nav-link" href="#">                        
-                        <button type="button" class="btn btn-outline-secondary signup">Signup</button>           
-                        <button type="button" class="btn btn-dark login">Login</button>
-                      </a>
-                    </li>
-                </ul>
-
-                <div class="nav-link1">
-                    <a class="nav-link1" href="#">
-                        Cookie
-                      </a>
-                      
-                      <a class="nav-link1" href="#">
-                        Privacy 
-                      </a>
-
-                      <a class="nav-link-policy" href="#">
-                        Policy
-                      </a>
-                      
-                      </div>
-                   
-   
-                 
-              </div>
+                            <a class="nav-link1" href="#">
+                                Cookie
+                              </a>
+                              
+                              <a class="nav-link1" href="#">
+                                Privacy 
+                              </a>
+          
+                              <a class="nav-link-policy" href="#">
+                                Policy
+                              </a>
+                              
+                              </div>
+                             </ul>
+                          </div>
+                       </div>
+          </nav>
         </div>
           
           <div class="main">
 
             <nav class="navbar navbar-expand-md navbar-dark">
-              <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler collapsed" id="mainNavbutton" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
             
