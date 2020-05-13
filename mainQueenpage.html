@@ -3,32 +3,41 @@
 <head>
     <style>
             /*Sidebar*/
-            .sidenav {
+        .sidenav {
           position: fixed; 
           z-index: 1; 
           top: 0; 
           left: 0;
           background-color:black; 
-          padding-top: 20px;
-          margin:0!important;
+          padding:1rem;
+          border-radius: 25px 25px 25px 25px;
+
         }
         [class*="albumList"]{
 
             margin-bottom: 10rem;
         }
+        #collapsedButton{
+            width:3.4rem;
+            }
         @media only screen and (min-width: 768px){
             .sidenav{
             height:100%;
             width:10rem;
+            border-radius: 0;
             }
             .bottomNav{
             position: relative;
             top:10rem;
             }
+            main{
+                margin-left: 10rem;;
+            }
+            
         }
         
         .navbar-toggler {
-          background-color: black;
+          background-color: black !important;
           padding: 0px;
           ;
         }
@@ -248,7 +257,6 @@
         /*mainpage*/
 
         main{
-            margin-left: 10rem;
             background-color: rgb(24, 24, 24);
             z-index: -2;
             height: 100%;
@@ -377,6 +385,9 @@
             .albumList{
             color:white;
             margin-bottom: 5rem;
+            }
+            .bottomNav{
+                margin-top: 5rem;
             }
         }
         .albumList h2{
@@ -567,10 +578,10 @@
 
     <nav class="navbar navbar-expand-md navbar-dark mr-0" id="sideBlack">
         <div class="sidenav">
-        <button class="navbar-toggler fixed-top" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button id="collapsedButton" class="navbar-toggler fixed-top" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse mt-4" id="navbarSupportedContent">
               <ul class="navbar-nav d-flex flex-column mb-auto">
                 <li class="nav-item active">
                 <a class="nav-link brand active" href="#">
