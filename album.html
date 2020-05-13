@@ -19,12 +19,55 @@
         body::-webkit-scrollbar {
             display: none;
         }
-        .container-fluid{
-            padding-bottom: 4.0rem;
+
+        /***** SIDE NAV ****/
+                
+        .sidenav {
+            height: 90vh; 
+            /* width: 10rem; */
+            position: fixed; 
+            z-index: 1; 
+            top: 0; 
+            left: 0;
+            background-color:black; 
+            overflow-x: hidden; 
+            padding-top: 20px;
         }
-        .container-fluid .row .col-2{
-            max-height: 90vh;
-            background-color: honeydew;
+        
+
+        .navbar-toggler {
+          background-color: black;
+          padding: 0px;
+        }
+        #sideBlack {
+          background-color: black !important;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+            #track-list {
+                height: auto;
+            }
+        }
+
+        .nav-link {
+            color:white !important;
+            font-size: small !important;
+            font-weight:bold !important;
+        }
+        .side2{
+            position:absolute;
+            bottom:100px;
+        }
+        .brand {
+            font-size: larger !important;
+            font-weight: bolder !important;
+        }
+
+        .nav-item-profile {
+            font-size: small !important;
+            font-weight: bold !important;
         }
 
         .main-content{
@@ -76,7 +119,7 @@
         }
 
         #track-list {
-            height: 88vh;
+            height: 90vh;
             overflow-y: auto;
         }
 
@@ -204,179 +247,227 @@
             color:white;
         }
 
-        
-        @media (max-width: 768px) {
-            #display-album{
-                margin-bottom: 10rem;
+        [class*="container-fluid"]{
+            margin-bottom: 10rem !important;
+        }
+        @media only screen and (min-width: 993px){
+            .container-fluid{
+            margin-bottom: 5rem !important;
+            }
+            nav{
+                height: auto;
+            }
+                
+            .bottomSide{
+                margin-top: 10rem;
             }
         }
+
     </style>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-2 black-bg">
-              <div>
-                <p>Side Nav</p>
-              </div>
+    <div class="sidenav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="sideBlack">
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="side1">
+                <a class="nav-link brand active" href="#">
+                  <img src="https://www.iconsdb.com/icons/preview/white/spotify-xxl.png" width="40px" height="40">
+                  Spotify <span class="sr-only">(current)</span>
+                </a>
+                <a class="nav-link" href="#">
+                  <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M448 463.746h-149.333v-149.333h-85.334v149.333h-149.333v-315.428l192-111.746 192 110.984v316.19z" fill="currentColor"></path></svg>
+                  Home
+                </a>
+                <a class="nav-link" href="#">
+                  <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M349.714 347.937l93.714 109.969-16.254 13.969-93.969-109.969q-48.508 36.825-109.207 36.825-36.826 0-70.476-14.349t-57.905-38.603-38.603-57.905-14.349-70.476 14.349-70.476 38.603-57.905 57.905-38.603 70.476-14.349 70.476 14.349 57.905 38.603 38.603 57.905 14.349 70.476q0 37.841-14.73 71.619t-40.889 58.921zM224 377.397q43.428 0 80.254-21.461t58.286-58.286 21.461-80.254-21.461-80.254-58.286-58.285-80.254-21.46-80.254 21.46-58.285 58.285-21.46 80.254 21.46 80.254 58.285 58.286 80.254 21.461z" fill="currentColor" fill-rule="evenodd"></path></svg>
+                  Search
+                </a>
+                <a class="nav-link" href="#">
+                    <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z" fill="currentColor"></path></svg>
+                    Your library
+                </a>
+                <ul class="nav flex-column mb-sm-7 bottomSide">
+                    <!-- <li class="nav-items">            -->
+                    <li class="nav-items">
+                        <a class="nav-link" href="#">
+                            <svg class="bi bi-file-arrow-down mr-2" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 1h8a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V3a2 2 0 012-2zm0 1a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V3a1 1 0 00-1-1H4z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd" d="M4.646 8.146a.5.5 0 01.708 0L8 10.793l2.646-2.647a.5.5 0 01.708.708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 010-.708z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd" d="M8 4a.5.5 0 01.5.5v6a.5.5 0 01-1 0v-6A.5.5 0 018 4z" clip-rule="evenodd"/>
+                            </svg>
+                        Install App
+                        </a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+    
+                    
+                    <li class="nav-item-profile">
+                        <a class="nav-link " href="#">
+                            <img src ="https://media-exp1.licdn.com/dms/image/C5603AQEmKU0TgsZoSA/profile-displayphoto-shrink_200_200/0?e=1594252800&v=beta&t=hYGnBJx2IqizocP7Fn5D8-l3onRqxwgdIs59rTjtHcE" width="40px" height="40px">
+                            Diego Banovaz
+                        </a>
+                    </li>
+                    <!-- </li> -->    
+                </ul>        
             </div>
-            <div class="col-10 main-content">
-              <div class="row">
-                <div id="display-album" class="col-12 col-md-4 d-flex justify-content-end">
-                  <div class="card mt-5">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Queen_II_%28album_cover%29.jpg/220px-Queen_II_%28album_cover%29.jpg"/>
-                    <p>Queen II (Deluxe Edition 2011 Remaster)</p>
-                    <small>Queen</small>
-                    <button type="button" class="btn">PLAY</button>
-                    <small>1974 . 16 SONGS</small>
-                    <p><i class="fa fa-heart-o"></i><span class="px-2"></span><i class="fa fa-ellipsis-h"></i></p>
-                  </div>
+        </nav>
+
+    </div>
+    <div class="container-fluid">
+        <div class="row main-content">
+            <div id="display-album" class="col-12 col-md-5 d-flex justify-content-end">
+                <div class="card mt-5">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Queen_II_%28album_cover%29.jpg/220px-Queen_II_%28album_cover%29.jpg"/>
+                <p>Queen II (Deluxe Edition 2011 Remaster)</p>
+                <small>Queen</small>
+                <button type="button" class="btn">PLAY</button>
+                <small>1974 . 16 SONGS</small>
+                <p><i class="fa fa-heart-o"></i><span class="px-2"></span><i class="fa fa-ellipsis-h"></i></p>
                 </div>
-                <div id="track-list" class="col py-3 px-5">
-                  <div  class="card">
+            </div>
+            <div id="track-list" class="col py-3 px-5">
+                <div  class="card">
                     <div class="d-flex justify-content-between">
-                      <p><i class="fa fa-music pr-3"></i>Procession - Remastered 2011</p>
-                      <p>1:11</p>
+                        <p><i class="fa fa-music pr-3"></i>Procession - Remastered 2011</p>
+                        <p>1:11</p>
                     </div>
                     <small>Queen</small>
                     <div class="d-flex justify-content-between">
-                      <p><i class="fa fa-music pr-3"></i>Father To Son - Remastered 2011</p>
-                      <p>6:11</p>
+                        <p><i class="fa fa-music pr-3"></i>Father To Son - Remastered 2011</p>
+                        <p>6:11</p>
                     </div>
                     <small>Queen</small>
                     <div class="d-flex justify-content-between">
-                      <p><i class="fa fa-music pr-3"></i>White Queen (As it Began) - Remastered 2011</p>
-                      <p>3:55</p>
+                        <p><i class="fa fa-music pr-3"></i>White Queen (As it Began) - Remastered 2011</p>
+                        <p>3:55</p>
                     </div>
                     <small>Queen</small>
                     <div class="d-flex justify-content-between">
-                      <p><i class="fa fa-music pr-3"></i>Some Day One Day - Remastered 2011</p>
-                      <p>4:22</p>
+                        <p><i class="fa fa-music pr-3"></i>Some Day One Day - Remastered 2011</p>
+                        <p>4:22</p>
                     </div>
                     <small>Queen</small>
                     <div class="d-flex justify-content-between">
-                      <p><i class="fa fa-music pr-3"></i>The Looser in The End - Remastered 2011</p>
-                      <p>4:01</p>
+                        <p><i class="fa fa-music pr-3"></i>The Looser in The End - Remastered 2011</p>
+                        <p>4:01</p>
                     </div>
                     <small>Queen</small>
                     <div class="d-flex justify-content-between">
-                      <p><i class="fa fa-music pr-3"></i>Ogre Battle - Remastered 2011</p>
-                      <p>4:06</p>
+                        <p><i class="fa fa-music pr-3"></i>Ogre Battle - Remastered 2011</p>
+                        <p>4:06</p>
                     </div>
                     <small>Queen</small>
                     <div class="d-flex justify-content-between">
-                      <p><i class="fa fa-music pr-3"></i>The Fairy Feller's Master Stroke - Remastered 2011</p>
-                      <p>2:40</p>
+                        <p><i class="fa fa-music pr-3"></i>The Fairy Feller's Master Stroke - Remastered 2011</p>
+                        <p>2:40</p>
                     </div>
                     <small>Queen</small>
                     <div class="d-flex justify-content-between">
-                      <p><i class="fa fa-music pr-3"></i>Nevermore - Remastered 2011</p>
-                      <p>1:18</p>
+                        <p><i class="fa fa-music pr-3"></i>Nevermore - Remastered 2011</p>
+                        <p>1:18</p>
                     </div>
                     <small>Queen</small>
                     <div class="d-flex justify-content-between">
-                      <p><i class="fa fa-music pr-3"></i>The March of The Black Queen - Remastered 2011</p>
-                      <p>6:32</p>
+                        <p><i class="fa fa-music pr-3"></i>The March of The Black Queen - Remastered 2011</p>
+                        <p>6:32</p>
                     </div>
                     <small>Queen</small>
                     <div class="d-flex justify-content-between">
-                      <p><i class="fa fa-music pr-3"></i>Funny How Love is - Remastered 2011</p>
-                      <p>2:49</p>
+                        <p><i class="fa fa-music pr-3"></i>Funny How Love is - Remastered 2011</p>
+                        <p>2:49</p>
                     </div>
                     <small>Queen</small>
                     <div class="d-flex justify-content-between">
-                      <p><i class="fa fa-music pr-3"></i>Seven Seas of Rhye - Remastered 2011</p>
-                      <p>2:48</p>
+                        <p><i class="fa fa-music pr-3"></i>Seven Seas of Rhye - Remastered 2011</p>
+                        <p>2:48</p>
                     </div>
                     <small>Queen</small>
                     <div class="d-flex justify-content-between">
-                      <p><i class="fa fa-music pr-3"></i>See What a Fool I've Been - Live BBC Session, London / July 1973 / 2011 Remix</p>
-                      <p>4:22</p>
+                        <p><i class="fa fa-music pr-3"></i>See What a Fool I've Been - Live BBC Session, London / July 1973 / 2011 Remix</p>
+                        <p>4:22</p>
                     </div>
                     <small>Queen</small>
                     <div class="d-flex justify-content-between">
-                      <p><i class="fa fa-music pr-3"></i>White Queen (As it Began) - Live At Hammersmith Odeon, London / December 1975</p>
-                      <p>3:55</p>
+                        <p><i class="fa fa-music pr-3"></i>White Queen (As it Began) - Live At Hammersmith Odeon, London / December 1975</p>
+                        <p>3:55</p>
                     </div>
                     <small>Queen</small>
                     <!-- Repeat same content as above -->
                     <div class="d-flex justify-content-between">
                         <p><i class="fa fa-music pr-3"></i>Procession - Remastered 2011</p>
                         <p>1:11</p>
-                      </div>
-                      <small>Queen</small>
-                      <div class="d-flex justify-content-between">
+                    </div>
+                    <small>Queen</small>
+                    <div class="d-flex justify-content-between">
                         <p><i class="fa fa-music pr-3"></i>Father To Son - Remastered 2011</p>
                         <p>6:11</p>
-                      </div>
-                      <small>Queen</small>
-                      <div class="d-flex justify-content-between">
+                    </div>
+                    <small>Queen</small>
+                    <div class="d-flex justify-content-between">
                         <p><i class="fa fa-music pr-3"></i>White Queen (As it Began) - Remastered 2011</p>
                         <p>3:55</p>
-                      </div>
-                      <small>Queen</small>
-                      <div class="d-flex justify-content-between">
+                    </div>
+                    <small>Queen</small>
+                    <div class="d-flex justify-content-between">
                         <p><i class="fa fa-music pr-3"></i>Some Day One Day - Remastered 2011</p>
                         <p>4:22</p>
-                      </div>
-                      <small>Queen</small>
-                      <div class="d-flex justify-content-between">
+                    </div>
+                    <small>Queen</small>
+                    <div class="d-flex justify-content-between">
                         <p><i class="fa fa-music pr-3"></i>The Looser in The End - Remastered 2011</p>
                         <p>4:01</p>
-                      </div>
-                      <small>Queen</small>
-                      <div class="d-flex justify-content-between">
+                    </div>
+                    <small>Queen</small>
+                    <div class="d-flex justify-content-between">
                         <p><i class="fa fa-music pr-3"></i>Ogre Battle - Remastered 2011</p>
                         <p>4:06</p>
-                      </div>
-                      <small>Queen</small>
-                      <div class="d-flex justify-content-between">
+                    </div>
+                    <small>Queen</small>
+                    <div class="d-flex justify-content-between">
                         <p><i class="fa fa-music pr-3"></i>The Fairy Feller's Master Stroke - Remastered 2011</p>
                         <p>2:40</p>
-                      </div>
-                      <small>Queen</small>
-                      <div class="d-flex justify-content-between">
+                    </div>
+                    <small>Queen</small>
+                    <div class="d-flex justify-content-between">
                         <p><i class="fa fa-music pr-3"></i>Nevermore - Remastered 2011</p>
                         <p>1:18</p>
-                      </div>
-                      <small>Queen</small>
-                      <div class="d-flex justify-content-between">
+                    </div>
+                    <small>Queen</small>
+                    <div class="d-flex justify-content-between">
                         <p><i class="fa fa-music pr-3"></i>The March of The Black Queen - Remastered 2011</p>
                         <p>6:32</p>
-                      </div>
-                      <small>Queen</small>
-                      <div class="d-flex justify-content-between">
+                    </div>
+                    <small>Queen</small>
+                    <div class="d-flex justify-content-between">
                         <p><i class="fa fa-music pr-3"></i>Funny How Love is - Remastered 2011</p>
                         <p>2:49</p>
-                      </div>
-                      <small>Queen</small>
-                      <div class="d-flex justify-content-between">
+                    </div>
+                    <small>Queen</small>
+                    <div class="d-flex justify-content-between">
                         <p><i class="fa fa-music pr-3"></i>Seven Seas of Rhye - Remastered 2011</p>
                         <p>2:48</p>
-                      </div>
-                      <small>Queen</small>
-                      <div class="d-flex justify-content-between">
+                    </div>
+                    <small>Queen</small>
+                    <div class="d-flex justify-content-between">
                         <p><i class="fa fa-music pr-3"></i>See What a Fool I've Been - Live BBC Session, London / July 1973 / 2011 Remix</p>
                         <p>4:22</p>
-                      </div>
-                      <small>Queen</small>
-                      <div class="d-flex justify-content-between">
+                    </div>
+                    <small>Queen</small>
+                    <div class="d-flex justify-content-between">
                         <p><i class="fa fa-music pr-3"></i>White Queen (As it Began) - Live At Hammersmith Odeon, London / December 1975</p>
                         <p>3:55</p>
-                      </div>
-                      <small>Queen</small>
-                  </div>
+                    </div>
+                    <small>Queen</small>
                 </div>
-              </div>
             </div>
         </div>
-        
     </div>
-        <!-- <footer>
-            <div>
-                Footer Footer Footer
-            </div>
-        </footer> -->
+    
     <footer class="fixed-bottom">
         <div class="row">
             <div class="detailFav col col-6 col-lg-3 order-1 d-flex align-items-center">
@@ -386,7 +477,7 @@
                 <a href="#" id="fullHeart"><i class="fa fa-heart pl-4"></i></a>
                 <a href="#" id="outsidePlayer"><i class="fa fa-minus-square-o mx-auto pl-4"></i></a>
             </div>
-            <div id="mainPlayer" class="col col-12 col-lg-6 order-first order-lg-1 d-flex flex-column justify-content-center">
+            <div id="mainPlayer" style="height:5rem" class="col col-12 col-lg-6 order-first order-lg-1 d-flex flex-column justify-content-center">
                 <div class="d-flex justify-content-center align-items-end">
                     <a href="#" id="random"><i class="fa fa-random pl-4 "></i></a>
                     <a href="#" id="back"><i class="fa fa-step-backward pl-4"></i></a>
@@ -428,5 +519,20 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"
   ></script>
+
+  <script>
+    function updateTextInput(val) {
+        let time1=new Date()
+        let hours=Math.floor(val / 3600)
+        time1.setHours(hours);
+        let minutes=Math.floor((val-hours*3600) / 60)
+        time1.setMinutes( minutes);
+        let seconds=Math.ceil(val -hours*3600 -minutes * 60)
+        time1.setSeconds(seconds );
+        console.log(time1)
+        document.getElementsByClassName('trackTime')[0].value=time1.toString().split(" ")[4];
+    }
+
+</script>
 </body>
 </html>
