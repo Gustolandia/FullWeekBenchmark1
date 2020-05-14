@@ -18,24 +18,42 @@
 
       }
 
-        .sidenav {
-          height: 100%; 
+
+.sidenav {
           position: fixed; 
           z-index: 1; 
           top: 0; 
           left: 0;
           background-color:black; 
-          overflow-x: hidden; 
-          padding-top: 20px;
-        }
+          padding:1rem;
+          border-radius: 25px 25px 25px 25px;
 
-        .side1 {
-          background-color: black !important;
-          padding: none !important;
         }
-
+        #collapsedButton{
+            width:3.4rem;
+            }
+        @media only screen and (min-width: 768px){
+            .sidenav{
+            height:100%;
+            width:10rem;
+            border-radius: 0;
+            }
+            .bottomNav{
+            position: fixed;
+            bottom:10rem;
+            }
+            main{
+                margin-left: 10rem;
+            }
+            
+        }
+        @media only screen and (min-width: 933px){
+          .bottomNav{
+          bottom:5rem;
+          }
+        }
         .navbar-toggler {
-          background-color: black;
+          background-color: black !important;
           padding: 0px;
           ;
         }
@@ -43,67 +61,18 @@
           background-color: black !important;
         }
 
-
-
-
-        .main {
-          margin-left: 160px; 
-          padding: 0px 10px;
-        }
-
-
-        @media screen and (max-height: 450px) {
-          .sidenav {padding-top: 15px;}
-          .sidenav a {font-size: 18px;}
-        }
-
         .nav-link {
             color:white !important;
             font-size: small !important;
             font-weight:bold !important;
         }
-
-        .under:hover {
-          border-left: 3px solid green;
-        }
-
         
-        .side2{
-            position:absolute;
-            bottom:100px;
-        }
+
         .brand {
             font-size: larger !important;
             font-weight: bolder !important;
         }
 
-        .nav-item-profile {
-            font-size: small !important;
-            font-weight: bold !important;
-        }
-
-        .item-top{
-          color:silver;
-          font-size: large;
-          font-weight:bold;
-        }
-
-        .img-row {
-          background-color:transparent;
-          border: none;
-        }
-
-        p {
-          color: white;
-          font-size: x-small;
-          text-align: center;
-        }
-
-        h2{
-          color: white;
-          font-weight: bold;
-          font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
         .button {
         background-color:transparent; /* Green */
         border: 2px solid white;
@@ -124,6 +93,113 @@
             color:black
         }
         
+        .nav-link1{
+            display: inline-block;
+            color:white !important;
+            font-size: small !important;
+            font-weight:bold !important;
+            padding-left: 6px;
+        }
+
+        .under:hover {
+          border-left: 3px solid green;
+        }
+
+      
+
+        .hovereffect {
+          width:100%;
+          height:100%;
+          float:left;
+          overflow:visible;
+          position:relative;
+          cursor:pointer;
+          }
+
+          .hovereffect img {
+          display:block;
+          position:relative;
+          -webkit-transition:all .3s linear;
+          transition:all .3s linear;
+          }
+
+          .hovereffect:hover img {
+          -ms-transform:scale(1.1);
+          -webkit-transform:scale(1.1);
+          transform:scale(1.1);
+          }
+
+        .top-li:hover {
+          color: white !important;
+
+        }
+
+        .signup {
+          background-color: white;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 1.50px;
+          border: 2px solid transparent;
+          border-radius: 500px;
+          padding: 8px 30px;       
+          width: 100%;
+          margin-bottom:8px;   
+        }
+
+        .login{
+          background-color:black;
+          color: white;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 1.50px;
+          border: 2px solid white;
+          border-radius: 500px;
+          padding: 8px 30px; 
+          width: 100%;
+          margin-bottom:10px;
+        }
+    
+
+
+        .main {
+          margin-left: 160px; 
+          padding: 0px 10px;
+        }
+
+
+        .img-row {
+          background-color:transparent;
+          border: none;
+        }
+
+        p {
+          color: white;
+          font-size: x-small;
+          text-align: center;
+        }
+
+        h2{
+          color: white;
+          font-weight: bold;
+          font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }*/
+*/
+        
+        .button {
+        background-color:transparent; /* Green */
+        border: 2px solid white;
+        color: white;
+        padding: 10px 30px 10px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 20%;
+        width: 100px;
+        } 
+   
         .nav-link1{
             display: inline-block;
             color:white !important;
@@ -172,32 +248,7 @@
 
         .top-li:hover {
           color: white !important;
-          border-bottom: 1px solid rgb(6, 167, 6);
-        }
-
-        .signup {
-          background-color: white;
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 1.50px;
-          border: 2px solid transparent;
-          border-radius: 500px;
-          padding: 8px 30px;       
-          width: 100%;
-          margin-bottom:8px;   
-        }
-
-        .login{
-          background-color:black;
-          color: white;
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 1.50px;
-          border: 2px solid white;
-          border-radius: 500px;
-          padding: 8px 30px; 
-          width: 100%;
-          margin-bottom:10px;
+          border-bottom: 2px solid rgb(6, 167, 6) !important;
         }
 
         footer{
@@ -317,73 +368,94 @@
           top: 200%;
 
         }
+        @media only screen and (max-width: 768px){
+            
+            .main{
+                margin-left: 0;
+            }
+            
+        }
+        @media only screen and (min-width: 768px){
+            .sidenav{
+            height:100%;
+            width:10rem;
+            border-radius: 0;
+            }
+            .bottomNav{
+            position: fixed;
+            bottom:10rem;
+            }
+            main{
+                margin-left: 10rem;
+            }
+            
+        }
+        @media only screen and (min-width: 933px){
+          .bottomNav{
+          bottom:5rem;
+          }
+        }
         
     </style>
   </head>
 
   <body>
     <div class="container-fluid">
+      <nav class="sidenav navbar navbar-expand-md navbar-dark bg-dark" id="sideBlack">
         <div class="sidenav">
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="sideBlack">
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <div class="side1">
+        <button class="navbar-toggler fixed-top" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse mt-4" id="navbarSupportedContent">
+              <ul class="navbar-nav d-flex flex-column mb-auto">
+                <li class="nav-item active">
                 <a class="nav-link brand active" href="#">
                     <img src="https://www.iconsdb.com/icons/preview/white/spotify-xxl.png" width="40px" height="40">
                     Spotify <span class="sr-only">(current)</span>
-                  </a>
-                  <a class="nav-link under" href="#">
+                </a>
+              </li>
+                <li class="nav-item active">
+                <a class="nav-link under" href="#">
                     <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M448 463.746h-149.333v-149.333h-85.334v149.333h-149.333v-315.428l192-111.746 192 110.984v316.19z" fill="currentColor"></path></svg>
                     Home
-                  </a>
-                  <a class="nav-link under" href="#">
+                </a>
+              </li>
+                <li class="nav-item active">
+                <a class="nav-link under" href="#">
                     <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M349.714 347.937l93.714 109.969-16.254 13.969-93.969-109.969q-48.508 36.825-109.207 36.825-36.826 0-70.476-14.349t-57.905-38.603-38.603-57.905-14.349-70.476 14.349-70.476 38.603-57.905 57.905-38.603 70.476-14.349 70.476 14.349 57.905 38.603 38.603 57.905 14.349 70.476q0 37.841-14.73 71.619t-40.889 58.921zM224 377.397q43.428 0 80.254-21.461t58.286-58.286 21.461-80.254-21.461-80.254-58.286-58.285-80.254-21.46-80.254 21.46-58.285 58.285-21.46 80.254 21.46 80.254 58.285 58.286 80.254 21.461z" fill="currentColor" fill-rule="evenodd"></path></svg>
                     Search
-                  </a>
-                    <a class="nav-link under" href="#">
-                        <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z" fill="currentColor"></path></svg>
+                </a>
+              </li>
+                <li class="nav-item active">
+                  <a class="nav-link under" href="#">
+                    <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z" fill="currentColor"></path></svg>
                         Your library
-                      </a>
-                      <ul class="nav flex-column mb-sm-7 bottomSide">
-                        <li class="nav-items">           
-                            <a class="nav-link" href="#">                        
-                              <button type="button" class="btn btn-outline-secondary signup">Signup</button>           
-                              <button type="button" class="btn btn-dark login">Login</button>
-                            </a>
-                          </li>
-                          
-                <div class="nav-link1 mb-sm-1">
-                  <a class="nav-link1" href="#">
-                      Cookie
-                    </a>
-                    
-                    <a class="nav-link1" href="#">
-                      Privacy 
-                    </a>
+                </a> 
+              </li>
+         
+                            
 
-                    <a class="nav-link1" href="#">
-                      Policy
-                    </a>
-                    
-                    </div>
-                          
-                      </ul>
-                      
-                      
+<li class="bottomNav nav-item active"> 
+                
+                <a class="nav-link" href="#">
+                  <button type="button" class="btn btn-light bottom-btn signup">Sign up</button>
+                </a>
+                <a class="nav-link" href="#">
+                  <button type="button" class="btn btn-dark bottom-btn login">Login</button>   
+                </a>
+              </li>
+              </ul>
             </div>
-          </nav>
+          </div>
+      </nav>
 
 
 
-        </div>
+        
           
           <div class="main">
 
-            <nav class="navbar navbar-expand-md navbar-dark">
+            <nav class="navbar navbar-expand-sm navbar-dark">
               <button class="navbar-toggler collapsed" id="mainNavbutton" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -518,7 +590,7 @@
                  <p>Viral 50 Italy</p>
                 </div>
               
-            
+              </div>
         </div>
         <footer class="fixed-bottom">
             <div class="row">
