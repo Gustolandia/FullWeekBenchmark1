@@ -3,7 +3,7 @@
 <head>
     <style>
             /*Sidebar*/
-        .sidenav {
+            .sidenav {
           position: fixed; 
           z-index: 1; 
           top: 0; 
@@ -13,7 +13,6 @@
           border-radius: 25px 25px 25px 25px;
 
         }
-
         #collapsedButton{
             width:3.4rem;
             }
@@ -27,10 +26,19 @@
             position: fixed;
             bottom:10rem;
             }
+            #display-album{
+                padding-left: 10rem;
+            }
             main{
                 margin-left: 10rem;
             }
             
+        }
+        
+        @media only screen and (min-width: 992px){
+          .bottomNav{
+          bottom:5rem;
+          }
         }
         
         .navbar-toggler {
@@ -74,71 +82,19 @@
             color:black
         }
         
-        .nav-link1{
-            display: inline-block;
-            color:white !important;
-            font-size: small !important;
-            font-weight:bold !important;
-            padding-left: 6px;
+        
+        .inst-ban {
+          font-size: 12px !important;
         }
 
-      
-
-        .hovereffect {
-          width:100%;
-          height:100%;
-          float:left;
-          overflow:visible;
-          position:relative;
-          cursor:pointer;
-          }
-
-          .hovereffect img {
-          display:block;
-          position:relative;
-          -webkit-transition:all .3s linear;
-          transition:all .3s linear;
-          }
-
-          .hovereffect:hover img {
-          -ms-transform:scale(1.1);
-          -webkit-transform:scale(1.1);
-          transform:scale(1.1);
-          }
-
-        .top-li:hover {
-          color: white !important;
-          text-decoration: underline;
-
+        .inst-ban:hover{
+          font-style:italic;
+          color:lightgrey;
         }
 
-        .signup {
-          background-color: white;
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 1.50px;
-          border: 2px solid transparent;
-          border-radius: 500px;
-          padding: 8px 30px;       
-          width: 100%;
-          margin-bottom:8px;   
+        .under:hover {
+          border-left: 3px solid green;
         }
-
-        .login{
-          background-color:black;
-          color: white;
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 1.50px;
-          border: 2px solid white;
-          border-radius: 500px;
-          padding: 8px 30px; 
-          width: 100%;
-          margin-bottom:10px;
-        }
-
-
-
         /*footer*/
 
         footer{
@@ -781,13 +737,13 @@
                     Home
                 </a>
               </li>
-                <li class="nav-item">
+                <li class="nav-item under">
                 <a class="nav-link" href="#">
                     <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M349.714 347.937l93.714 109.969-16.254 13.969-93.969-109.969q-48.508 36.825-109.207 36.825-36.826 0-70.476-14.349t-57.905-38.603-38.603-57.905-14.349-70.476 14.349-70.476 38.603-57.905 57.905-38.603 70.476-14.349 70.476 14.349 57.905 38.603 38.603 57.905 14.349 70.476q0 37.841-14.73 71.619t-40.889 58.921zM224 377.397q43.428 0 80.254-21.461t58.286-58.286 21.461-80.254-21.461-80.254-58.286-58.285-80.254-21.46-80.254 21.46-58.285 58.285-21.46 80.254 21.46 80.254 58.285 58.286 80.254 21.461z" fill="currentColor" fill-rule="evenodd"></path></svg>
                     Search
                 </a>
               </li>
-                <li class="nav-item">
+                <li class="nav-item under">
                   <a class="nav-link" href="#">
                     <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z" fill="currentColor"></path></svg>
                         Your library
