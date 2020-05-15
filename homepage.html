@@ -335,20 +335,24 @@
             }
         .slider {
             -webkit-appearance: none;
-            width: 80%;
-            height: .3rem;
+            width: 77%;
+            height: .4rem;
             background: rgb(146, 146, 146);
             outline: none;
-            opacity: 0.6;
+            opacity: 0;
             -webkit-transition: .2s;
             transition: opacity .2s;
             cursor: pointer;
+            z-index:1 !important;
+            position: absolute;
+            left:10.5%;
+            top:78%;
 
         }
 
-        #mainPlayer:hover .slider {
+        /*#mainPlayer:hover .slider {
             opacity: 1;
-        }
+        }*/
         .slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -363,15 +367,54 @@
             background: #4CAF50;
 
         }
-        .progress.d-inline-block{
+        
+        .volumeControl:hover i, .volumeControl:hover div, .volumeControl:hover .insideVolume{
+            opacity: 1!important;
+            color:white!important;
+        }
+        .visibleBar{
+            position:absolute;
+            left:10.5%;
+            top:78%;
+            background:rgb(146, 146, 146)!important;
+            height:.4rem !important;
+            width:77% !important;
+            z-index:-1 !important;
+            opacity:0.6 !important;
+        }
+        #movingSong{
+            opacity:0.6;
+        }
+        #mainPlayer:hover .insideTrack{
+            opacity:1;
+            background-color: white!important;
+        }
+        #totalTime{
+            position:relative;
+            left:85%
+        }
+        .slider2{
+            -webkit-appearance: none;
+            position: absolute !important;
+            left:55%;
+            opacity: 0;
+            width:27%;
+            z-index: 1;
+            cursor: pointer;
+        }
+        .progress.d-inline-block.volumeBar{
             width:5rem;
             height:.4rem;
+            position: absolute !important;
+            left:55%;
+            opacity: 0.5;
+            width:27%;
+            z-index: -1;
         }
-        .volumeControl:hover i, .volumeControl:hover div{
-            opacity: 1;
-            color:white;
-        }   
-
+        #random3{
+            position: absolute !important;
+            left:39%;
+        }
         #mainNavbutton {
           background-color:rgb(23, 102, 102) !important;
         }
@@ -648,37 +691,177 @@
 
 
         </div>
-    </footer>
-            
-    <script>
-    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        <footer class="fixed-bottom">
+          <div class="row">
+              <div class="detailFav col col-6 col-lg-3 order-1 d-flex align-items-center">
+                  <img id="imageFooter" src="https://img.discogs.com/QT8ppBlDmb7jh1Q4y8etne8g2BQ=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7084048-1530792189-1455.jpeg.jpg" alt="Queen">
+                  <span class="mb-0 mx-auto" id="nameOfSong">Love Of My Life<br><span>Queen</span></span>
+                  <a href="#" id="emptyHeart"><i class="fa fa-heart-o pl-4"></i></a>
+                  <a href="#" id="fullHeart"><i class="fa fa-heart pl-4"></i></a>
+                  <a href="#" id="outsidePlayer"><i class="fa fa-minus-square-o mx-auto pl-4"></i></a>
+              </div>
+              <div id="mainPlayer" style="height:5rem" class="col col-12 col-lg-6 order-first order-lg-1 d-flex flex-column justify-content-center">
+                  <div class="d-flex justify-content-center align-items-end">
+                      <a href="#" id="random"><i class="fa fa-random pl-4 "></i></a>
+                      <a href="#" id="back"><i class="fa fa-step-backward pl-4"></i></a>
+                      <a href="#" id="play" class="play"><i style="font-size: 2rem;"class="fa fa-play-circle-o pl-4 pt-2"></i><i style="font-size: 2rem; display:none;"class="fa fa-pause-circle-o pl-4 pt-2"></i></a>
+                      <a href="#" id="forward"><i class="fa fa-step-forward pl-4"></i></a>
+                      <a href="#" id="repeat"><i class="fa fa-repeat pl-4"></i></a>
+                      <audio id="main_audio" ontimeupdate='updateTrackTime(this);' preload="auto" loop="loop">
+                          <source src="Queen - Love of My Life.mp3" type="audio/mpeg">
+                          <embed hidden="true" autostart="false" loop="false" src="Queen - Love of My Life.mp3"/>
+                      </audio>
+                  </div>
+                  <div>
+                      <input type="time" class="trackTime" value="" style="width:9% !important">
+                      <div class="visibleBar progress">
+                          <div id="movingSong" class="progress-bar insideTrack" role="progressbar" style="height: 100%;width:0%; background:white!important;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <input type="range" min="00" max="100" value="1" class="slider" id="myRange" onchange="updateTextInput(this.value);">
+                      <span class="trackTime"id="totalTime">total time will be here</span>
+                  </div>
+              </div>
+              <div class="volumeControl col col-6 col-lg-3 order-12 d-flex align-items-center">
+                  <a href="#" id="random1"><i class="fa fa-align-justify pl-4 "></i></a>
+                  <a href="#" id="random2"><i class="fa fa-desktop pl-4 "></i></a>
+                  <a href="#" id="random3"><i class="fa fa-volume-up pl-4 "></i></a>
+                  <div class="progress d-inline-block volumeBar" style="background:rgb(146, 146, 146)!important;">
+                      <div id="movingVolume" class="progress-bar insideVolume" role="progressbar" style="height: 100%;width:40%; background:white!important;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <input type="range" min="00" max="100" value="1" class="slider2" id="myRange2" onchange="updateVolume(this.value);">
+              </div>
+  
+      </footer>
+          
+      <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-        function updateTextInput(val) {
-            let time1=new Date()
-            let hours=Math.floor(val / 3600)
-            time1.setHours(hours);
-            let minutes=Math.floor((val-hours*3600) / 60)
-            time1.setMinutes( minutes);
-            let seconds=Math.ceil(val -hours*3600 -minutes * 60)
-            time1.setSeconds(seconds );
-            console.log(time1)
-            document.getElementsByClassName('trackTime')[0].value=time1.toString().split(" ")[4];
-        }
-
-    </script>
+      ></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"
+      ></script>
+      <script>
+          function updateTrackTime(track){
+              let currTime = track.currentTime; 
+              let duration = track.duration;
+              let time1=new Date()
+              let hours=Math.floor(currTime / 3600)
+              time1.setHours(hours);
+              let minutes=Math.floor((currTime-hours*3600) / 60)
+              time1.setMinutes( minutes);
+              let seconds=Math.ceil(currTime -hours*3600 -minutes * 60)
+              time1.setSeconds(seconds );
+              document.getElementsByClassName('trackTime')[0].value=time1.toString().split(" ")[4];
+              document.getElementById("movingSong").style.width=(currTime*100/duration)+"%";
+  
+          }
+              
+          
+          // function updateTextInput(val) {
+          //     // let time1=new Date()
+          //     // let hours=Math.floor(val / 3600)
+          //     // time1.setHours(hours);
+          //     // let minutes=Math.floor((val-hours*3600) / 60)
+          //     // time1.setMinutes( minutes);
+          //     // let seconds=Math.ceil(val -hours*3600 -minutes * 60)
+          //     // time1.setSeconds(seconds );
+          //     // document.getElementsByClassName('trackTime')[0].value=time1.toString().split(" ")[4];
+          //     // document.getElementById("movingSong").style.width=Math.floor(val*100/420)+"%";
+          // }
+          function updateVolume(val){
+              console.log(val);
+              document.getElementById("movingVolume").style.width=val+"%";
+          }
+  
+  
+          $(document).ready(function () {
+              $('.mainPageNav li a').click(function(e) {
+  
+                  $('.mainPageNav li.active').removeClass('active');
+                  var $parent = $(this).parent();
+                  $parent.addClass('active');
+                  e.preventDefault();
+              });
+          });
+  
+          window.onload = function (){
+              let arrayOfAs=document.querySelectorAll("#main-nav-collapse li a");
+              for (let i1=0;i1<arrayOfAs.length; i1++){
+                  arrayOfAs[i1].addEventListener('click',function(event){
+                      let myA=event.currentTarget.closest("a");
+                      if (myA.id=="relatedArtists"){
+                          document.getElementsByClassName("overview")[0].style.display="none";
+                          document.getElementsByClassName("relatedArtists")[0].style.display="block";
+                          document.getElementsByClassName("about")[0].style.display="none";    
+                      }
+                      else if (myA.id=="overview"){
+                          document.getElementsByClassName("overview")[0].style.display="block";
+                          document.getElementsByClassName("relatedArtists")[0].style.display="none";
+                          document.getElementsByClassName("about")[0].style.display="none";    
+                      }
+                      else if (myA.id=="about"){
+                          document.getElementsByClassName("overview")[0].style.display="none";
+                          document.getElementsByClassName("relatedArtists")[0].style.display="none";
+                          document.getElementsByClassName("about")[0].style.display="block";    
+                      }
+                      
+  
+                  })
+              }
+              //other function -- set total time duration
+  
+              let audio1 = document.querySelector("#main_audio");
+  
+                  let time2=new Date()
+                  let val=audio1.duration;
+                  let hours=Math.floor(val / 3600);
+                  time2.setHours(hours);
+                  let minutes=Math.floor((val-hours*3600) / 60);
+                  time2.setMinutes(minutes);
+                  let seconds=Math.ceil(val -hours*3600 -minutes * 60)
+                  time2.setSeconds(seconds);
+                  console.log(time2.toString().split(" ")[4])
+                  document.getElementById("totalTime").innerText=time2.toString().split(" ")[4];                   
+  
+          //different function here - Play and Pause buttons (change between them)
+          let isPlaying = function(audio) {return !audio.paused;}
+          let a = document.getElementById('main_audio');
+          if(!(a.play instanceof Function)){
+              a = document.getElementById("play");
+              isPlaying = function(audio) {return audio.playState==2;}
+          }
+          $('.play').on('click', function() {
+              if (isPlaying(a)) {
+                  a.pause();
+                  document.querySelector(".play i:nth-child(2)").style.display="none";
+                  document.querySelector(".play i:nth-child(1)").style.display="inline-block";
+  
+              } 
+              else {
+              a.play();
+              document.querySelector(".play i:nth-child(1)").style.display="none";
+              document.querySelector(".play i:nth-child(2)").style.display="inline-block";
+  
+              }
+          });
+              
+          }
+          function updateTextInput(sTime){
+              let audio2=document.querySelector("#main_audio");
+              audio2.currentTime=sTime*audio2.duration/100;
+              }
+          
+  
+  
+      </script>
         
           
 
