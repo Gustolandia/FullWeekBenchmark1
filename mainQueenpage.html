@@ -484,8 +484,16 @@
             }
         }
         .overview, .relatedArtists, .about{
-            transition: all 1s;
+            transition: transform .7s;
+
         }
+        /* .relatedArtists, .about{
+            transform: scale(0); */
+        }
+        /* .overview{
+            transform: translate(-100%);
+        } */
+
 
 
 
@@ -931,21 +939,39 @@
             for (let i1=0;i1<arrayOfAs.length; i1++){
                 arrayOfAs[i1].addEventListener('click',function(event){
                     let myA=event.currentTarget.closest("a");
-                    document.getElementsByClassName("overview")[0].style.display="none";
-                    document.getElementsByClassName("relatedArtists")[0].style.display="none";
-                    document.getElementsByClassName("about")[0].style.display="none";
                     if (myA.id=="relatedArtists"){
-                        document.getElementsByClassName("relatedArtists")[0].style.display="block";
-                    }
+                        document.getElementsByClassName("overview")[0].style.transform="translate(-115%) scale(0)";
+                        document.getElementsByClassName("about")[0].style.transform="translate(-115%) scale(0)";
+                        }
                     else if (myA.id=="overview"){
-                        document.getElementsByClassName("overview")[0].style.display="block"; 
-                    }
+                        document.getElementsByClassName("relatedArtists")[0].style.transform="translate(-115%) scale(0)";
+                        document.getElementsByClassName("about")[0].style.transform="translate(-115%) scale(0)";
+                        }
                     else if (myA.id=="about"){
-                        document.getElementsByClassName("about")[0].style.display="block";    
-                    }
-                    
-
-                })
+                        document.getElementsByClassName("overview")[0].style.transform="translate(-115%) scale(0)";
+                        document.getElementsByClassName("relatedArtists")[0].style.transform="translate(-115%) scale(0)";
+                        }
+                    setTimeout(function(){
+                        document.getElementsByClassName("overview")[0].style.display="none";
+                        document.getElementsByClassName("relatedArtists")[0].style.display="none";
+                        document.getElementsByClassName("about")[0].style.display="none";
+                        if (myA.id=="relatedArtists"){
+                            document.getElementsByClassName("relatedArtists")[0].style.display="block";
+                            document.getElementsByClassName("relatedArtists")[0].style.transform="translate(0, 0) scale(0.2)";
+                            setTimeout(function(){document.getElementsByClassName("relatedArtists")[0].style.transform="none";}, 100);
+                        }
+                        else if (myA.id=="overview"){
+                            document.getElementsByClassName("overview")[0].style.display="block";
+                            document.getElementsByClassName("overview")[0].style.transform="translate(0, 0) scale(0.2)";
+                            setTimeout(function(){document.getElementsByClassName("overview")[0].style.transform="none";}, 100);
+                        }
+                        else if (myA.id=="about"){
+                            document.getElementsByClassName("about")[0].style.display="block";
+                            document.getElementsByClassName("about")[0].style.transform="translate(0, 0) scale(0.2)";
+                            setTimeout(function(){document.getElementsByClassName("about")[0].style.transform="none";}, 100);    
+                        }
+                        }, 400);
+                    });
             }
             //other function -- set total time duration
 
@@ -990,8 +1016,6 @@
             audio2.currentTime=sTime*audio2.duration/100;
             }
         
-
-
     </script>
 </body>
     
