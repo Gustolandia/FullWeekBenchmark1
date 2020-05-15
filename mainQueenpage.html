@@ -372,15 +372,14 @@
             background-color: rgb(29, 185, 84) !important;
             border:solid 1px green!important;
             color:white;
-            transition: width 0.3s, height 0.3s;
+            transition: transform .3s;
         }
 
         .buttonWrapper button:hover{
             background-color: green !important;
         }
         .buttonWrapper button:nth-child(1):active{
-            width:7.8rem;
-            height:2.1rem;
+            transform:scale(0.95);
         }
 
         .buttonWrapper button:nth-child(2){
@@ -389,14 +388,13 @@
             color:white;
             opacity:0.7;
 
-            transition: width 0.3s, height 0.3s;
+            transition: transform .3s;
         }
         .buttonWrapper button:nth-child(2):hover{
             background-color: green !important;
         }
         .buttonWrapper button:nth-child(2):active{
-            width:7.8rem;
-            height:2.1rem;
+            transform:scale(0.95);
             background:transparent!important;
         }
         .buttonWrapper i{
@@ -407,7 +405,7 @@
             opacity:1;
         }
         .buttonWrapper i:active{
-            width:.5rem !important;
+            transform:scale(0.8);
         }
 
         .mainPageNav li {
@@ -484,6 +482,9 @@
             .freddyImage{
             width:60%
             }
+        }
+        .overview, .relatedArtists, .about{
+            transition: all 1s;
         }
 
 
@@ -930,19 +931,16 @@
             for (let i1=0;i1<arrayOfAs.length; i1++){
                 arrayOfAs[i1].addEventListener('click',function(event){
                     let myA=event.currentTarget.closest("a");
+                    document.getElementsByClassName("overview")[0].style.display="none";
+                    document.getElementsByClassName("relatedArtists")[0].style.display="none";
+                    document.getElementsByClassName("about")[0].style.display="none";
                     if (myA.id=="relatedArtists"){
-                        document.getElementsByClassName("overview")[0].style.display="none";
                         document.getElementsByClassName("relatedArtists")[0].style.display="block";
-                        document.getElementsByClassName("about")[0].style.display="none";    
                     }
                     else if (myA.id=="overview"){
-                        document.getElementsByClassName("overview")[0].style.display="block";
-                        document.getElementsByClassName("relatedArtists")[0].style.display="none";
-                        document.getElementsByClassName("about")[0].style.display="none";    
+                        document.getElementsByClassName("overview")[0].style.display="block"; 
                     }
                     else if (myA.id=="about"){
-                        document.getElementsByClassName("overview")[0].style.display="none";
-                        document.getElementsByClassName("relatedArtists")[0].style.display="none";
                         document.getElementsByClassName("about")[0].style.display="block";    
                     }
                     
